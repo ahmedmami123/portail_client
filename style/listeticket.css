@@ -1,0 +1,89 @@
+.ticket-list-container {
+  width: 98%;
+  padding: 20px 0px;
+}
+/* page title  */
+.ticket-list h2 {
+  color: #000000b3;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+.ticket-list i {
+  color: #737373;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+}
+/* search bar  */
+.ticket-liste-and-search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lc-searchbar-container {
+  width: auto;
+  height: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.ticket-list-container input {
+  border-radius: 20px;
+  border: 1px solid #00000052;
+  background: rgba(255, 255, 255, 0.77);
+  width: 200px;
+  height: 35px;
+  padding-left: 33px;
+}
+
+.ticket-list-container input:focus {
+  outline: none;
+}
+.ticket-list-container .img {
+  width: 18px;
+  position: absolute;
+  left: 10px;
+}
+
+.ticket-img img {
+  width: 50px;
+}
+
+/* --------------------filter --------------- */
+.liste-ticket-search-filter1 {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: auto;
+}
+
+/* table  */
+table {
+  margin-top: 50px;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+th {
+  border-top: 1px solid #000; /* Add a 1px solid black border to th and td elements */
+}
+th,
+td {
+  text-align: center;
+  padding: 15px;
+  border-bottom: 1px solid #000; /* Add a 1px solid black border to th and td elements */
+}
+.liste-ticket-logo {
+  position: relative;
+  padding: 0 !important;
+}
+.liste-ticket-logo img {
+  position: absolute;
+  top: 25%;
+  width: 50%;
+  height: 50%;
+}

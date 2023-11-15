@@ -1,0 +1,37 @@
+/* font family links */
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap");
+/* end font family links */
+* {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "ABeeZee", sans-serif;
+  text-decoration: none;
+}
+body {
+  height: 100%;
+}
+
+.sidebar {
+  width: 20%;
+  flex-shrink: 0;
+  background: #d9d9d9;
+  position: fixed;
+  z-index: 99999999;
+}
+button {
+  cursor: pointer;
+}
+.all-content {
+  display: flex;
+  height: 100%;
+  /* background-color: red; */
+}
+.page-content {
+  top: 0;
+  margin-left: 300px;
+  position: relative;
+  width: 82%;
+  /* background-color: red; */
+}

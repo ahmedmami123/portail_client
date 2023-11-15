@@ -1,0 +1,122 @@
+/* side bar logo */
+.sidebar1 {
+  width: 100%;
+  flex-shrink: 0;
+
+  padding: 25px;
+  height: 800px;
+}
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 30px;
+}
+.sidebar-logo img {
+  width: 50px;
+  height: 50px;
+}
+.sidebar i {
+  color: #000;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+/* linee */
+hr {
+  width: 100%;
+  margin: 15px 0;
+  border: 1px solid rgba(0, 0, 0, 0.062);
+}
+/* search input */
+.sidebarch-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.sidebarch-search input {
+  width: 200px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 1px solid #00000042;
+  background: rgba(255, 255, 255, 0.77);
+  padding-left: 20px;
+}
+
+.sidebarch-search input:focus {
+  outline: none;
+}
+.sidebarch-search .search-icon {
+  width: 21px;
+  font-size: 50px;
+  height: 26px;
+  right: 67px;
+  position: absolute;
+}
+/* side bar content  */
+/* side bar logo and title  */
+.sidebar-content {
+  width: 300px;
+  height: 85%;
+  overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
+}
+.sidebar-content .sb-logo-title {
+  width: 90%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.sidebar-content .sb-logo-title img {
+  width: 30px;
+}
+.sidebar-content a {
+  color: #000;
+  font-family: "ABeeZee", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* current user  */
+.sb-current-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  width: 81%;
+}
+.sb-current-user img {
+  width: 30px;
+}
+
+.sb-current-user-content {
+  display: flex;
+  align-items: center !important;
+justify-content: start;
+}
+.current-user-name-role h3 {
+  color: #000;
+  font-family: "ABeeZee", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 0;
+}
+.current-user-name-role h5 {
+  color: rgba(0, 0, 0, 0.482);
+  font-family: "ABeeZee", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

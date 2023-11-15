@@ -1,0 +1,110 @@
+{% extends "template.html" %} {% block sidebar %}
+    <link rel="stylesheet" href="./style/sidebar.css" />
+
+
+    <!-- sidebar logo -->
+    <div class="sidebar1">
+  <div class="sidebar-logo">
+    <img src="./images/logo.png" alt="" />
+    <i>IQRATIC</i>     
+  </div>
+  <!-- end sidebar logo -->
+  <hr></hr>
+  <!-- sidebar search  -->
+  <div class="sidebarch-search">
+    <input  type="text" placeholder="Rechercher" >
+    <img class="search-icon" src="./images/search.svg" alt="">
+  </div>
+  <!-- end sidebar search  -->
+  <hr>
+  <!-- side bar content  -->
+  <div class="sidebar-content">
+    <!-- ----------------------- admin side bar --------------------------- -->
+                {% if r.role == "admin" %}
+   <div class="sb-logo-title">
+        <img src="./images/dashbord-icon.svg" alt="">
+        <a href="index.php?action=dashbord">Tableaux de board</a>
+    </div>
+     <div class="sb-logo-title">
+        <img src="./images/l-tickets-icon.svg" alt="">
+        <a href="index.php?action=liste_ticket">Listes des tickets</a>
+    </div>
+    <div class="sb-logo-title">
+        <img src="./images/l-tickets-icon.svg" alt="">
+        <a  href="index.php?action=liste_client">Listes des clients</a>
+    </div>
+      <!-- liste des utilisateurs  -->
+        <div class="sb-logo-title">
+        <img src="./images/l-tickets-icon.svg" alt="">
+        <a  href="index.php?action=liste_utilisateur">Liste des utilisateurs</a>
+    </div>
+    <!-- end list des utilisateur  -->
+ <div class="sb-logo-title">
+        <img src="./images/aj-utilisateur-icon.svg" alt="">
+        <a href="index.php?action=ajouter_utilisateur"> Ajouter un utlisateur</a>
+    </div>
+      <div class="sb-logo-title">
+        <img src="./images/aj-utilisateur-icon.svg" alt="">
+        <a href="index.php?action=ajouter_client">Ajouter un client</a>
+    </div>
+    <!-- ajouter un ticket dev et admin  -->
+    <div class="sb-logo-title">
+        <img src="./images/aj-utilisateur-icon.svg" alt="">
+        <a href="index.php?action=ajouter_ticket_dev">Ajouter un ticket  </a>
+    </div>
+            {% endif %}
+    <!-- ----------------------- end admin side bar --------------------------- -->
+
+    
+     <!-- ----------------------- devloppeur side bar --------------------------- -->
+                {% if r.role == "devloppeur" %}
+  
+     <div class="sb-logo-title">
+        <img src="./images/l-tickets-icon.svg" alt="">
+        <a href="index.php?action=liste_ticket">Listes des tickets</a>
+    </div>
+
+    
+
+    <!-- ajouter un ticket dev et admin  -->
+    <div class="sb-logo-title">
+        <img src="./images/aj-utilisateur-icon.svg" alt="">
+        <a href="index.php?action=ajouter_ticket_dev">Ajouter un ticket </a>
+    </div>
+            {% endif %}
+    <!-- ----------------------- end devloppeur side bar --------------------------- -->
+
+    {% if r.role == "contact_client" %}
+<!-- ajouter un ticket client  -->
+<div class="sb-logo-title">
+  <img src="./images/l-tickets-icon.svg" alt="">
+  <a href="index.php?action=liste_ticket">Listes des tickets</a>
+</div>
+     <div class="sb-logo-title">
+        <img src="./images/aj-utilisateur-icon.svg" alt="">
+        
+        <a href="index.php?action=ajouter_ticket_client">Ajouter un ticket </a>
+    </div> 
+    {% endif %}
+         <!-- end side bar content -->
+<div class="sb-current-user">
+    <img src="./images/user logo.svg" alt="">
+    <div class="sb-current-user-content">
+        <div class="current-user-name-role">
+          
+            {% if a==1 %}
+            <h3>{{r.user_name}}</h3> 
+            {% endif %}
+          
+            <h5>{{r.role}}</h5>
+        </div>
+        <a  href="index.php?action=LogOut"
+        >   <img style="width: 25px; margin-left: 20px;" src="./images/logout.svg" alt=""></a>
+
+    </div>
+</div>
+  </div>
+
+</div>
+ {% endblock %}
+

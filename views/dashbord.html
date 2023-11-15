@@ -1,0 +1,25 @@
+{% extends "template.html" %} {% block dashbord %}
+<link rel="stylesheet" href="./style/dashbord.css" />
+<div class="dashbord">
+  <h2 class="a-dashbord">Tableau de bord</h2>
+    <div class="all-chart">
+<div class="chart">
+    <img src="./images/dashbord chart.png" alt="">
+    <h5>{{clientNum}} client</h5>
+</div>
+<div class="chart">
+    <img src="./images/dashbord chart.png" alt="">
+    <h5>{{ticketNum}} ticket</h5>
+</div>
+<div class="chart">
+    <img src="./images/dashbord chart.png" alt="">
+    <h5>{{devtNum}} dev</h5>
+</div>
+<div class="chart">
+    <img src="./images/dashbord chart.png" alt="">
+    <h5>{{adminNum}} admin</h5>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,138 @@
+{% extends "template.html" %} {% block add_ticket_client %}
+<link rel="stylesheet" href="./style/addticket_dev.css" />
+<form class="add-ticket" 
+  method="post"
+    action="index.php?action=addticketAdmin"
+    enctype="multipart/form-data"
+>
+  <div class="a-ticket-type">
+    <h2 class="a-ticket">Ajouter un ticket</h2>
+    <h2>{{r.id}}</h2>
+  
+    <img src="./images//star.svg" alt="" />
+    <select class="type-input" name="etat" id="etat">
+      <option value="public">Ticket public</option>
+      <option value="prive">Ticket privé</option>
+    </select>
+  </div>
+  <div class="add-ticket-path">
+    <i>Tableau de bord</i>
+    <i>/</i>
+    <i>ajouter un ticket</i>
+    <div class="star-obligation">
+      <img src="./images//star.svg" alt="" />
+      <p>champ obligatoire</p>
+    </div>
+  
+      <!-- username input  -->
+      <div class="add-ticket-content-dev">
+        <div class="addticket-input-title-dev">
+          <h4>Type</h4>
+          <div class="gap-input-star-dev">
+            <img src="./images//star.svg" alt="" />
+            <select class="type-input" name="type" id="type">
+              <option value="type1">type 1</option>
+              <option value="type2">type </option>
+              <option value="type3">type 3</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="addticket-input-title-dev">
+        <h4>Client</h4>
+        <div class="gap-input-star-dev">
+          <img src="./images//star.svg" alt="" />
+          <select
+            aria-placeholder="choisir un ticket"
+            class="type-input"
+            name="client"
+            id="client"
+          >
+            {% for r in result %}
+            <option value="{{r.id}}">
+              {{r.client_name}}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <!-- Titre input  -->
+      <div class="addticket-input-title-dev">
+        <h4>Titre</h4>
+        <div class="gap-input-star-dev">
+          <img src="./images//star.svg" alt="" />
+          <input placeholder="titre" type="text" name="titre" required />
+        </div>
+      </div>
+
+      <!-- Description input  -->
+      <div class="addticket-input-description-dev">
+        <h4 style="margin-bottom: 10px">Description</h4>
+        <input type="text" name="description" required />
+      </div>
+
+      <!-- logo input  -->
+      <div class="addticket-addlogo-dev">
+        <h4>Piéces jointes</h4>
+        <div class="gap-input-star-dev">
+          <img src="" alt="" />
+          <div class="logo-choosefile-dev">
+            <div class="file-input-container-dev">
+              <label for="file-upload" class="custom-file-upload-dev">
+                Choisir un fichier ...
+              </label>
+              <input type="file" id="file-upload" name="piece" required />
+            </div>
+            <p>Taille maximale des nouveaux fichiers : 512Mo</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- devloppeur assigné -->
+
+          <!-- logo input  -->
+      <div class="addticket-addlogo-dev">
+        <h4>Assigner devloppeur</h4>
+        <div class="gap-input-star-dev">
+          <img src="./images//star.svg" alt="" />
+          <div class="logo-choosefile-dev">
+            <div class="file-input-container-dev">
+              <div class="assigner-dev-btn">
+                 <a id="openModalBtn" >+ Ajouter un devloppeur</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   <!-- The Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Assigner devloppeur</h2>
+        <div class="checkbox-list">
+          {% for r1 in result1 %}
+
+            <label>
+                <input type="checkbox" name="ch[]" class="checkbox-item" value="{{r1.id}}"> {{r1.user_name}}
+            </label>
+            {% endfor %}
+          
+        </div>
+        <a id="saveBtn" class="assiger-save-btn">Save</a>
+    </div>
+</div>
+
+   
+
+      <div class="add-ticket-button-dev">
+        <button type="submit" name="submit" class="save-btn-dev">
+          Enregistrer
+        </button>
+        <button type="reset" class="cancel-btn-dev">Annuler</button>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}

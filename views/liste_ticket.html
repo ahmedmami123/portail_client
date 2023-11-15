@@ -1,0 +1,165 @@
+{% extends "template.html" %} {% block liste_ticket %}
+<link rel="stylesheet" href="./style/listeticket.css" />
+<div class="ticket-list-container">
+  <div class="ticket-liste-and-search">
+    <div class="ticket-list">
+      {{resulto}}
+      <h2>Liste des tickets</h2>
+      <i>Tableau de bord</i>
+      <i>/</i>
+      <i>Liste des tickets</i>
+    </div>
+    <div class="lc-searchbar-container">
+      <input type="text" id="searchInput-ticket" placeholder="Rechercher" />
+      <img
+        style="width: 15px; position: absolute; left: 15px"
+        src="./images/search.svg"
+        alt=""
+      />
+    </div>
+  </div>
+
+  <div class="ticket-list-path">
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+
+            <th>type</th>
+            <th>titre</th>
+            <th>description</th>
+            <th>image</th>
+            <th>etat</th>
+            <th>action</th>
+          </tr>
+        </thead>
+
+        <tbody id="filteredResults-ticket">
+          {% if res.role=="admin" %} {% for r in result %}
+
+          <tr>
+            <td>{{r.id}} {{r.client_name}}</td>
+            <td>{{r.type}}</td>
+            <td>{{r.titre}}</td>
+            <td>{{r.description}}</td>
+            <td class="ticket-img"><img src="{{r.piece_joint}}" alt="" /></td>
+            <td>{{r.etat}}</td>
+            <td>
+              <a
+                style="
+                  border-radius: 10px;
+                  background-color: #d9d9d9;
+                  padding: 7px 20px;
+                  color: black;
+                  font-weight: 600;
+                "
+                href="index.php?action=detail_ticket&id={{r.id}}"
+                >voir</a
+              >
+            </td>
+          </tr>
+          {%endfor%} {%endif%}
+
+          <!-- get ticket list for contact client -->
+          {% if res.role=="contact_client" %} {% for r in result %} {% if
+          r.clientadmin_id==res.client_id %} {% if r.etat=="public" %}
+
+          <tr>
+            <td>{{r.id}}</td>
+            <td>{{r.type}}</td>
+            <td>{{r.titre}}</td>
+            <td>{{r.description}}</td>
+            <td class="ticket-img"><img src="{{r.piece_joint}}" alt="" /></td>
+            <td>{{r.etat}}</td>
+            <td>
+              <a
+                style="
+                  border-radius: 10px;
+                  background-color: #d9d9d9;
+                  padding: 7px 20px;
+                  color: black;
+                  font-weight: 600;
+                "
+                href="index.php?action=detail_ticket&id={{r.id}}"
+                >voir</a
+              >
+            </td>
+          </tr>
+
+          {%endif%} {%endif%} {%endfor%} {%endif%}
+
+          <!-- get ticket list devloper-->
+          {% if res.role=="devloppeur" %} {% for r1 in result1 %}
+
+          <tr>
+            <td>{{r1.id}}</td>
+            <td>{{r1.type}}</td>
+            <td>{{r1.titre}}</td>
+            <td>{{r1.description}}</td>
+            <td class="ticket-img"><img src="{{r1.piece_joint}}" alt="" /></td>
+
+            <td>{{r1.etat}}</td>
+            <td>
+              <a
+                style="
+                  border-radius: 10px;
+                  background-color: #d9d9d9;
+                  padding: 7px 20px;
+                  color: black;
+                  font-weight: 600;
+                "
+                href="index.php?action=detail_ticket&id={{r1.id}}"
+                >voir</a
+              >
+            </td>
+          </tr>
+
+          {%endfor%} {%endif%}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Get the search input and the container for filtered results
+  var searchInputTicket = document.getElementById("searchInput-ticket");
+  var filteredResultsTicket = document.getElementById("filteredResults-ticket");
+
+  // Add an event listener to the search input
+  searchInputTicket.addEventListener("input", function () {
+    // Get the search input value
+    var searchValueTicket = searchInputTicket.value.toLowerCase();
+
+    // Get all rows in the filtered results container
+    var rowsTicket = filteredResultsTicket.querySelectorAll("tr");
+
+    // Loop through the rows and show/hide based on the search input
+    rowsTicket.forEach(function (row) {
+      var id = row.querySelector("td:nth-child(1)").textContent.toLowerCase();
+      var type = row.querySelector("td:nth-child(2)").textContent.toLowerCase();
+      var titre = row
+        .querySelector("td:nth-child(3)")
+        .textContent.toLowerCase();
+      var description = row
+        .querySelector("td:nth-child(4)")
+        .textContent.toLowerCase();
+      var etat = row.querySelector("td:nth-child(6)").textContent.toLowerCase();
+
+      if (
+        id.includes(searchValueTicket) ||
+        type.includes(searchValueTicket) ||
+        titre.includes(searchValueTicket) ||
+        description.includes(searchValueTicket) ||
+        etat.includes(searchValueTicket)
+      ) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
+  });
+</script>
+
+{% endblock %}

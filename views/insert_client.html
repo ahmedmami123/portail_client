@@ -1,0 +1,91 @@
+{% extends "template.html" %} {% block insert_client %}
+<link rel="stylesheet" href="./style/addclient.css" />
+<div class="add-client">
+  <h2 class="a-client">Ajouter un client</h2>
+
+  <div class="add-client-path">
+    <i>Tableau de bord</i>
+    <i>/</i>
+    <i>ajouter un client</i>
+    <div class="star-obligation">
+      <img src="./images//star.svg" alt="" />
+      <p>champ obligatoire</p>
+    </div>
+    <form
+      class="add-client-form"
+      method="post"
+      action="index.php?action=addClient"
+      enctype="multipart/form-data"
+    >
+      <!-- username input  -->
+      <div class="add-client-content">
+        <div class="addclient-input-title">
+          <h4>Nom du client</h4>
+          <div class="gap-input-star">
+            <img src="./images//star.svg" alt="" />
+            <input
+              placeholder="Nom du client"
+              type="text"
+              name="clientname"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Nom input  -->
+        <div class="addclient-input-title">
+          <h4>Nom abérgé</h4>
+          <div class="gap-input-star">
+            <img src="" alt="" />
+            <input
+              placeholder="Nom abérgé"
+              type="text"
+              name="nomaberge"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <!-- Email input  -->
+      <div class="addclient-input-title">
+        <h4>Email principale du client</h4>
+        <div class="gap-input-star">
+          <img src="./images//star.svg" alt="" />
+          <input placeholder="email" type="text" name="email" required />
+        </div>
+      </div>
+
+      <!-- logo input  -->
+      <div class="addclient-addlogo">
+        <h4>Logo</h4>
+        <div class="gap-input-star">
+          <img src="./images//star.svg" alt="" />
+          <div class="logo-choosefile">
+            <div class="file-input-container">
+              <label for="file-upload" class="custom-file-upload">
+                Choisir un fichier ...
+              </label>
+              <input type="file" id="file-upload" name="logo" required />
+            </div>
+            <p>Taille maximale des nouveaux fichiers : 512Mo</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Description input  -->
+      <div class="addclient-input-description">
+        <h4>Description</h4>
+        <p>Ces informations ne seront pas visibles par les clients .</p>
+        <input type="text" name="description" required />
+      </div>
+
+      <div class="add-client-button">
+        <button type="submit" name="submit" class="save-btn">
+          Enregistrer
+        </button>
+        <button type="reset" class="cancel-btn">Annuler</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

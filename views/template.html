@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/sidebar.css" />
+  </head>
+  <body>
+    {% block login %} {% endblock %}
+    <div class="all-content">
+      <div class="sidebar">{% block sidebar %} {% endblock %}</div>
+      <div class="page-content">
+        {% block insert_user %} {% endblock %} {% block insert_client %} {%
+        endblock %} {% block liste_client %} {% endblock %} {% block
+        liste_utilisateur %} {% endblock %} {% block insert_user_client %} {%
+        endblock %} {% block add_ticket_dev %} {% endblock %} {% block
+        add_ticket_client %} {% endblock %} {% block liste_ticket %} {% endblock
+        %} {% block ticket_details %} {% endblock %} {% block dashbord %} {%
+        endblock %}
+      </div>
+    </div>
+
+    <!-- ----------------java script--------------------  -->
+    <!-- --------------- import bootsrap------------  -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+
+    <script>
+      // <!-- ----------------assigner dev modale js -------------- -->
+      // Get the modal element and buttons
+      var modal = document.getElementById("myModal");
+      var openModalBtn = document.getElementById("openModalBtn");
+      var saveBtn = document.getElementById("saveBtn");
+      var closeBtn = document.getElementsByClassName("close")[0];
+
+      // Open the modal
+      openModalBtn.onclick = function () {
+        modal.style.display = "block";
+      };
+
+      // Close the modal
+      closeBtn.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      // Save button action
+      saveBtn.onclick = function () {
+        var checkboxes = document.querySelectorAll(".checkbox-item");
+        var selectedOptions = [];
+
+        checkboxes.forEach(function (checkbox) {
+          if (checkbox.checked) {
+            selectedOptions.push(checkbox.nextSibling.textContent.trim());
+          }
+        });
+
+        alert("Selected options: " + selectedOptions.join(", "));
+        modal.style.display = "none";
+      };
+
+      // <!-- ----------------end assigner dev modale js -------------- -->
+    </script>
+<!-- ---------------------- search bar liste de clients-------------------------------  -->
+    <script>
+    // Get the search input and the container for filtered results
+    var searchInput = document.getElementById("searchInput");
+    var filteredResults = document.getElementById("filteredResults");
+
+    // Add an event listener to the search input
+    searchInput.addEventListener("input", function() {
+        // Get the search input value
+        var searchValue = searchInput.value.toLowerCase();
+
+        // Get all rows in the filtered results container
+        var rows = filteredResults.querySelectorAll("tr");
+
+        // Loop through the rows and show/hide based on the search input
+        rows.forEach(function(row) {
+            var clientName = row.querySelector("td:nth-child(2)").textContent.toLowerCase();
+            if (clientName.includes(searchValue)) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        });
+    });
+</script>
+<!-- ---------------------- end search bar liste de clients-------------------------------  -->
+
+<!-- ---------------------- search bar liste de tickets-------------------------------  -->
+ 
+<!-- ---------------------- end search bar liste de tickets-------------------------------  -->
+
+
+<!-- ---------------------- search bar liste de user-------------------------------  -->
+<script>
+    // Get the search input and the container for filtered results
+    var searchInputUser = document.getElementById("searchInput-user");
+    var filteredResultsUser = document.getElementById("filteredResults-user");
+
+    // Add an event listener to the search input
+    searchInputUser.addEventListener("input", function() {
+        // Get the search input value
+        var searchValueUser = searchInputUser.value.toLowerCase();
+
+        // Get all rows in the filtered results container
+        var rowsUser = filteredResultsUser.querySelectorAll("tr");
+
+        // Loop through the rows and show/hide based on the search input
+        rowsUser.forEach(function(row) {
+            var userName = row.querySelector("td:nth-child(1)").textContent.toLowerCase();
+            if (userName.includes(searchValueUser)) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        });
+    });
+</script>
+<!-- ---------------------- end search bar liste de tickets-------------------------------  -->
+
+  </body>
+</html>

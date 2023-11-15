@@ -1,0 +1,105 @@
+{% extends "template.html" %} {% block insert_user %}
+<link rel="stylesheet" href="./style/adduser.css" />
+<div class="add-user">
+  <h2 class="a-user">Ajouter un utilisateur</h2>
+
+  <div class="add-user-path">
+    <i>Tableau de bord</i>
+    <i>/</i>
+    <i>ajouter un utilisateur</i>
+    <div class="star-obligation">
+      <img src="./images//star.svg" alt="" />
+      <p>champ obligatoire</p>
+    </div>
+    <form class="add-user-form" method="post" action="index.php?action=addUser">
+      <!-- username input  -->
+
+      <!-- username input  -->
+      <div class="add-user-content">
+        <div class="adduser-input-title">
+          <h4>Nom d'utilisateur</h4>
+          <div class="gap-input-star">
+            <img src="./images//star.svg" alt="" />
+            <input
+              placeholder="Nom d'utilisateur"
+              type="text"
+              name="username"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Nom input  -->
+        <div class="adduser-input-title">
+          <h4>Nom</h4>
+          <div class="gap-input-star">
+            <img src="./images//star.svg" alt="" />
+            <input placeholder="Nom" type="text" name="nom" required />
+          </div>
+        </div>
+      </div>
+      <!-- prenom input  -->
+      <div class="adduser-input-title">
+        <h4>Prenom</h4>
+        <div class="gap-input-star">
+          <img src="./images//star.svg" alt="" />
+          <input placeholder="prenom" type="text" name="prenom" required />
+        </div>
+      </div>
+
+      <!-- email input  -->
+      <div class="adduser-input-title">
+        <h4>Email</h4>
+        <div class="gap-input-star">
+          <img src="./images//star.svg" alt="" />
+          <input placeholder="email" type="text" name="email" required />
+        </div>
+      </div>
+
+      <!-- Langue préférée input  -->
+      <div style="justify-content: flex-start" class="adduser-input-title">
+        <h4>Langue préférée</h4>
+        <div class="gap-input-star">
+          <img src="" alt="" />
+          <select class="role-input" name="langue" id="langue">
+            <option value="Francais">Français</option>
+            <option value="Anglais">Anglais</option>
+            <option value="Arabe">Arabe</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Mot de passe input  -->
+      <div class="adduser-input-title">
+        <h4>Mot de passe</h4>
+        <div class="gap-input-star">
+          <img src="./images//star.svg" alt="" />
+          <input
+            placeholder="Mot de passe "
+            type="password"
+            name="password"
+            required
+          />
+        </div>
+      </div>
+      <!-- role input  -->
+      <div style="justify-content: flex-start" class="adduser-input-title">
+        <h4>Role</h4>
+        <div class="gap-input-star">
+          <img src="./images//star.svg" alt="" />
+          <select class="role-input" name="role" id="role">
+            <option value="devloppeur">devloppeur</option>
+            <option value="admin">admin</option>
+          </select>
+        </div>
+      </div>
+      <div class="add-user-button">
+        <button type="submit" name="submit" class="save-btn">
+          Enregistrer
+        </button>
+        <button type="reset" class="cancel-btn">Annuler</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

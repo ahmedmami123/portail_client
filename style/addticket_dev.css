@@ -1,0 +1,363 @@
+.add-ticket {
+  /* background-color: blue; */
+  width: 98%;
+  padding: 20px 35px;
+}
+.a-ticket-type {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.a-ticket {
+  color: #000;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 10px;
+  width: 700px;
+}
+.a-ticket-clientname {
+  color: #000000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 10px;
+  width: 700px;
+  text-align: center;
+}
+.add-ticket-path {
+  width: 93%;
+}
+.add-ticket-path i {
+  color: #737373;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.star-obligation {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.star-obligation img {
+  width: 20px;
+}
+.star-obligation p {
+  color: rgba(0, 0, 0, 0.53);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 0;
+}
+
+.add-ticket-form-dev {
+  width: max-content;
+}
+.add-ticket-content-dev {
+  margin-top: 40px;
+}
+.addticket-input-title-dev {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+.addticket-input-title-dev h4 {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 400px;
+}
+.gap-input-star-dev {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 430px;
+  /* background-color: red; */
+  gap: 20px;
+}
+.addticket-input-title-dev .gap-input-star-dev img {
+  width: 20px;
+}
+.addticket-input-title-dev input {
+  padding-left: 10px;
+  width: 400px;
+  height: 43px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.26);
+  background: rgba(255, 255, 255, 0.6);
+}
+.addticket-input-title-dev input:focus {
+  outline: none;
+}
+
+/* role input  */
+.type-input {
+  padding-left: 10px;
+  position: relative;
+  width: 200px;
+  height: 43px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.26);
+  background: rgba(255, 255, 255, 0.6);
+}
+.type-input:focus {
+  outline: none;
+}
+
+/* add ticket button  */
+.add-ticket-button-dev {
+  margin-top: 20px;
+
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  width: 100%;
+}
+.add-ticket-button-dev .save-btn-dev {
+  width: 125px;
+  height: 47px;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 10px;
+  background: #0f6fc5;
+  color: white;
+  border: none;
+}
+.add-ticket-button-dev .cancel-btn-dev {
+  width: 125px;
+  height: 47px;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 10px;
+  background: #d9d9d9;
+  color: black;
+  border: none;
+}
+
+/* import logo to ticket */
+.addticket-addlogo-dev {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+.addticket-addlogo-dev h4 {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 400px;
+}
+
+.addticket-addlogo-dev .gap-input-star-dev img {
+  width: 20px;
+}
+.logo-choosefile-dev {
+  display: block;
+}
+.logo-choosefile-dev p {
+  color: rgba(0, 0, 0, 0.61);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-top: 5px;
+}
+
+/* input style  */
+/* Hide the default file input */
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload-dev {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+/* Style the label to resemble a button */
+.custom-file-upload-dev:hover {
+  background-color: #e0e0e0;
+}
+
+/* description input  */
+.addticket-input-description-dev {
+  align-items: center;
+  gap: 90px;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+.addticket-input-description-dev h4 {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 400px;
+}
+.addticket-input-description-dev p {
+  color: rgba(0, 0, 0, 0.61);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 5px 0;
+}
+.addticket-input-description-dev input {
+  width: 99%;
+  height: 247px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.213);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* devloppeur assigner  */
+.addticket-input-dev_assigner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.addticket-input-dev_assigner h4 {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 400px;
+}
+
+.addticket-input-dev_assigner .gap-input-star-dev img {
+  width: 20px;
+}
+.addticket-input-dev_assigner .gap-input-star-dev .assigner-dev {
+  position: absolute;
+  right: 900px;
+}
+/* .addticket-input-dev_assigner input {
+  padding-left: 40px;
+  width: 400px;
+  height: 43px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.26);
+  background: rgba(255, 255, 255, 0.6);
+} */
+.addticket-input-dev_assigner input:focus {
+  outline: none;
+}
+
+/** Button */
+
+/* <!-- ---assigner dev bootstrap---- --> */
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 0px 0px 20px 20px;
+  border: 1px solid #888;
+  width: max-content;
+  height: max-content;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.modal-content h2 {
+  font-size: 15px;
+  padding: 0 15px 0 0;
+  width: 100%;
+}
+.close {
+  float: right;
+  cursor: pointer;
+  font-size: 30px;
+  padding: 3px;
+}
+
+.checkbox-list {
+  margin: 20px 0;
+  display: grid;
+  grid-gap: 20px;
+}
+
+/* Checkbox Styles */
+.checkbox-item {
+  margin-right: 5px;
+}
+
+/* Button Styles */
+
+#saveBtn {
+  margin-top: 20px;
+}
+
+.gap-input-star-dev-assigner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 430px;
+  /* background-color: red; */
+  gap: 20px;
+}
+.addticket-input-title-dev .gap-input-star-dev-assigner img {
+  width: 20px;
+}
+.assigner-dev-btn {
+  padding: 10px 20px;
+  border: #888;
+  background-color: #d9d9d9;
+  border: 1px solid #88888850;
+  font-weight: 500;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+}
+.assigner-dev-plus {
+  position: absolute;
+  left: 55px;
+  cursor: pointer;
+}
+.assiger-save-btn {
+  padding: 10px 10px;
+  border: #888;
+  background-color: #f0f0f0;
+  border: 1px solid #88888850;
+  font-weight: 500;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+}
+
+/* <!--end ---assigner dev bootstrap---- --> */

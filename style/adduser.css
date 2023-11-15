@@ -1,0 +1,127 @@
+.add-user {
+  /* background-color: blue; */
+  width: 98%;
+  padding: 20px 35px;
+}
+.a-user {
+  color: #000;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+
+.add-user-path i {
+  color: #737373;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.star-obligation {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.star-obligation img {
+  width: 20px;
+}
+.star-obligation p {
+  color: rgba(0, 0, 0, 0.53);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 0;
+
+}
+
+.add-user-form {
+  width: max-content;
+}
+.add-user-content {
+  margin-top: 40px;
+}
+.adduser-input-title {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+.adduser-input-title h4 {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 400px;
+}
+.gap-input-star {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 430px;
+  gap: 20px;
+}
+.adduser-input-title .gap-input-star img {
+  width: 20px;
+}
+.adduser-input-title input {
+  padding-left: 10px;
+  width: 400px;
+  height: 43px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.26);
+  background: rgba(255, 255, 255, 0.6);
+}
+.adduser-input-title input:focus {
+  outline: none;
+}
+
+/* role input  */
+.role-input {
+  padding-left: 10px;
+  position: relative;
+  width: 200px;
+  height: 43px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.26);
+  background: rgba(255, 255, 255, 0.6);
+}
+.role-input:focus {
+  outline: none;
+}
+
+/* add user button  */
+.add-user-button {
+  margin-top: 20px;
+
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  width: 100%;
+}
+.add-user-button .save-btn {
+  width: 125px;
+  height: 47px;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 10px;
+  background: #0f6fc5;
+  color: white;
+  border: none;
+}
+.add-user-button .cancel-btn {
+  width: 125px;
+  height: 47px;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 10px;
+  background: #d9d9d9;
+  color: black;
+  border: none;
+}

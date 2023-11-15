@@ -1,0 +1,81 @@
+{% extends "template.html" %} {% block add_ticket_client %}
+<link rel="stylesheet" href="./style/addticket_dev.css" />
+<form
+  method="post"
+  action="index.php?action=addticket"
+  enctype="multipart/form-data"
+>
+  <div class="a-ticket-type">
+    <h2 class="a-ticket">Ajouter un ticket</h2>
+    <h2 class="a-ticket-clientname">
+      Nom de client : {% for r in result %} {{r.client_name}}
+      <input type="hidden" value="{{r.client_id}}" name="client" />
+      {%endfor%}
+    </h2>
+  </div>
+
+  <div class="add-ticket-path">
+    <i>Tableau de bord</i>
+    <i>/</i>
+    <i>ajouter un ticket</i>
+    <div class="star-obligation">
+      <img src="./images//star.svg" alt="" />
+      <p>champ obligatoire</p>
+    </div>
+    <div class="add-ticket-form-dev">
+      <!-- username input  -->
+      <div class="add-ticket-content-dev">
+        <div class="addticket-input-title-dev">
+          <h4>Type</h4>
+          <div class="gap-input-star-dev">
+            <img src="./images//star.svg" alt="" />
+            <select class="type-input" name="type" id="type">
+              <option value="type1">type 1</option>
+              <option value="type2">type 2</option>
+              <option value="type3">type 3</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Titre input  -->
+      <div class="addticket-input-title-dev">
+        <h4>Titre</h4>
+        <div class="gap-input-star-dev">
+          <img src="./images//star.svg" alt="" />
+          <input placeholder="titre" type="text" name="titre" required />
+        </div>
+      </div>
+
+      <!-- Description input  -->
+      <div class="addticket-input-description-dev">
+        <h4 style="margin-bottom: 10px">Description</h4>
+        <input type="text" name="description" required />
+      </div>
+
+      <!-- logo input  -->
+      <div class="addticket-addlogo-dev">
+        <h4>Piéces jointes</h4>
+        <div class="gap-input-star-dev">
+          <img src="" alt="" />
+          <div class="logo-choosefile-dev">
+            <div class="file-input-container-dev">
+              <label for="file-upload" class="custom-file-upload-dev">
+                Choisir un fichier ...
+              </label>
+              <input type="file" id="file-upload" name="piece" required />
+            </div>
+            <p>Taille maximale des nouveaux fichiers : 512Mo</p>
+          </div>
+        </div>
+      </div>
+      <div class="add-ticket-button-dev">
+        <button type="submit" name="submit" class="save-btn-dev">
+          Enregistrer
+        </button>
+        <button type="reset" class="cancel-btn-dev">Annuler</button>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}

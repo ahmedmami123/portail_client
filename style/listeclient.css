@@ -1,0 +1,124 @@
+.client-list-container{
+    width: 98%;
+  padding: 20px 0px;
+}
+/* page title  */
+.client-list h2 {
+  color: #000000b3;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+.client-list i {
+  color: #737373;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+}
+/* search bar  */
+.client-liste-and-search{
+   width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.lc-searchbar-container{
+    width: 300px;
+    height: 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.client-list-container input{
+    border-radius: 20px;
+border: 1px solid #00000052;
+background: rgba(255, 255, 255, 0.77);
+width: 200px;
+height: 35px;
+padding-left: 33px;
+}
+
+.client-list-container input:focus{
+    outline: none;
+}
+.s-t{
+    width: 18px;
+    position: absolute;
+    left: 10px !important;
+}
+
+/* table  */
+table {
+    margin-top: 50px;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+th{
+      border-top: 1px solid #000; /* Add a 1px solid black border to th and td elements */
+
+}
+th, td {
+  text-align: center;
+  padding: 15px;
+  border-bottom: 1px solid #000; /* Add a 1px solid black border to th and td elements */
+}
+.liste-client-logo{
+    position: relative;
+padding: 0 !important;
+
+}
+.liste-client-logo img{
+     position: absolute;
+    top: 25%;
+width: 50%;
+height: 50%;
+}
+
+/* ajouter utilisateur button  */
+.cssbuttons-io-button {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  color: black;
+  background: #ad5389;
+  background: #d9d9d9;
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #d9d9d9;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+}
+
+.cssbuttons-io-button svg {
+  margin-right: 6px;
+}
+
+.cssbuttons-io-button:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #5b5b5b;
+}
+
+.cssbuttons-io-button:active {
+  box-shadow: 0 0.3em 1em -0.5em #d9d9d9;
+}
+.cssbuttons-io-button a{
+  color: #000;
+  text-decoration: none !important;
+}
+
+/* ------------- delete user button ------------ */
+
+.supprimer-utilisateur{
+  text-decoration: none !important;
+  height: 90%;
+}
+.supprimer-utilisateur a {
+  color: white;
+  background-color:#db524b;
+  border-radius: 10px;
+padding: 10px;
+}

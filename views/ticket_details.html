@@ -1,0 +1,250 @@
+{% extends "template.html" %} {% block ticket_details %}
+<link rel="stylesheet" href="./style/ticketdetails.css" />
+
+<div class="ticket-details">
+  <h2 class="t-ticket-details">Ticket detail</h2>
+
+  <div class="ticket-details-path">
+    <i>Tableau de bord</i>
+    <i>/</i>
+    <i>Liste de tickets</i>
+    <i>/</i>
+    <i>Ticket detail</i>
+  </div>
+
+    <div class="ticket-details-donnee">
+      <div>
+        <div class="t-id-name">
+          <h4>ID de ticket :{{r.id}} /</h4>
+          <h4>nom de client : {{r1.client_name}}</h4>
+        </div>
+        <i
+          style="
+            color: #0909099d;
+            font-size: 12px;
+            margin-top: 10px;
+            text-decoration: underline;
+          "
+          >{{r1.email}}</i
+        >
+      </div>
+      <div>
+        <div class="t-id-name">
+          <h5>Type :</h5>
+          <i>{{r.type}}</i>
+        </div>
+        <div style="margin-top: 10px" class="t-id-name">
+          <h5>Etat :</h5>
+          <i>{{r.etat}}</i>
+        </div>
+      </div>
+    </div>
+    <!-- devloppeur assigner ticket detail  -->
+
+    <div class="ticket-details-donnee">
+          {% if user.role!="contact_client" %}
+
+      <div class="dev-ass-modif">
+        <div class="dev-assigner-t-detail">
+          <h4>Devloppeur assigné :</h4>
+          {% for r2 in result2 %}
+          <div class="dev-assigner-t-detail-name">
+          <h5  >{{r2.first_name}}</h5>
+        <a onclick="return confirm('Are you sure you want to delete this record?');"
+            href="index.php?action=Delassignerdev&id={{r2.id_devticket}}&id0={{r.id}}"  ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="trash-alt"><path fill="#FF6363" d="M10,18a1,1,0,0,0,1-1V11a1,1,0,0,0-2,0v6A1,1,0,0,0,10,18ZM20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Zm-3-1a1,1,0,0,0,1-1V11a1,1,0,0,0-2,0v6A1,1,0,0,0,14,18Z"></path></svg></a>  
+                  </div>
+            {% endfor %}
+          </div>
+        <div class="modif-dev-btn">
+          <img src="./images/modif-dev.png" alt="" />
+          <a id="openModalBtn">Ajouter</a>
+        </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Ajouter devloppeur</h2>
+            <div >
+  <form class="checkbox-list" method="post" action="index.php?action=assignerdev">
+<input type="hidden" value="{{r.id}}" name="id"/>
+               {% for r1 in result1 %}
+  <label>
+    <div  {% for r2 in result2 %}
+    {% if r2.dev_id == r1.id %}
+      style="display: none;"
+    {% endif %}
+  {% endfor %}>
+<input
+  type="checkbox"
+  name="ch[]"
+  class="checkbox-item"
+  value="{{ r1.id }}"
+ 
+{{ r2.user_name }}
+>
+<!-- {{ r2.user_name }} -->
+    {{ r1.user_name }}
+  </label>
+</div>
+  {% endfor %}
+  
+      </div>
+      <button name="submit" type="submit" class="assiger-save-btn">Save</button>
+    </form>
+          </div>
+           
+          </div>
+        </div>
+        {%endif%}
+      </div>
+    </div>
+    <!-- le contenu de ticket  -->
+    <div class="ticket-contenu">
+      <h2>{{r.titre}}</h2>
+      <p>{{r.description}}</p>
+      <div class="ticket-date">
+        <i>{{ r.date}}</i>
+      </div>
+    </div>
+     <!-- ticket detail option  -->
+     {% if user.role!="contact_client" %}
+     <form method="post" action="index.php?action=update_option_ticket&id={{r.id}}">
+      <div class="ticket-detail-option">
+        <div class="ticket-detail-option-etat">
+        <div class="type-option">
+       
+          <h4>Modifier type :</h4>
+          <select
+            aria-placeholder="choisir un ticket"
+            class=""
+            name="type"
+            id="type"
+          >
+            <option value="ouvert" {%if r.type == "ouvert" %} selected {%endif%} >ouvert</option>
+            <option value="encours" {%if r.type == "encours" %} selected {%endif%}>en cours</option>
+            <option value="fermer" {%if r.type == "fermer" %} selected {%endif%}>fermer</option>
+          </select>
+        </div>
+       
+        <div class="type-option">
+          <h4>Modifier etat :</h4>
+          <select
+            aria-placeholder="choisir un ticket"
+            class=""
+            name="etat"  
+            id="etat"
+          >
+            <option value="privee" {%if r.etat == "privee" %} selected {%endif%}>privé</option>
+            <option value="public"  {%if r.etat == "public" %} selected {%endif%}>public</option>
+          </select>
+        </div>
+      </div>
+        <div class="save-updates-ticket">
+                  <button  type="submit" name="submit">Enregister modification </button>
+      </div>
+      </div>
+      </form>
+      {%endif%}
+      <!-- end ticket detail option  -->
+    <!-- liste de commentaire  -->
+    <h2 style="margin-top: 20px">Liste de commentaires :</h2>
+    {% for c in comment %}
+   {% if (user.role!="contact_client" and c.type_com=="privee") %}
+    <div class="commentaire-contenu">
+      <h2>{{c.user_name}} ({{c.role}}) : {%if c.user_id == user_id %}<a onclick="return confirm('Are you sure you want to delete this record?');"
+        href="index.php?action=DeleteComment&id={{c.id}}&ticket_id={{c.ticket_id}}" style="color: red; cursor: pointer;">   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="trash-alt"><path fill="#FF6363" d="M10,18a1,1,0,0,0,1-1V11a1,1,0,0,0-2,0v6A1,1,0,0,0,10,18ZM20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Zm-3-1a1,1,0,0,0,1-1V11a1,1,0,0,0-2,0v6A1,1,0,0,0,14,18Z"></path></svg></a>{% endif  %}</h2>
+        <p style="color: gray;">{{c.type_com}}</p>
+        <div class="discri">
+      
+      <p>
+     {{c.comment}}
+
+      </p>
+      <img width="100px" src="{{c.upload}}"/>
+    </div>
+      <div class="commentaire-date">
+        <i>{{c.datetime}}</i>
+      </div>
+    </div>
+    {% elseif (c.type_com=="public") %}
+    <div class="commentaire-contenu">
+      <h2 >{{c.user_name}} ({{c.role}}) : {%if c.user_id == user_id %}<a onclick="return confirm('Are you sure you want to delete this record?');"
+        href="index.php?action=DeleteComment&id={{c.id}}&ticket_id={{c.ticket_id}}" style="color: red; cursor: pointer;">   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="trash-alt"><path fill="#FF6363" d="M10,18a1,1,0,0,0,1-1V11a1,1,0,0,0-2,0v6A1,1,0,0,0,10,18ZM20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Zm-3-1a1,1,0,0,0,1-1V11a1,1,0,0,0-2,0v6A1,1,0,0,0,14,18Z"></path></svg>
+      
+      </a>{% endif  %}</h2>
+        {% if (user.role!="contact_client" ) %}
+        <p style="color: gray;">{{c.type_com}}</p>
+{%endif%}
+        <div class="discri">
+      
+      <p>
+     {{c.comment}}
+
+      </p>
+      <img width="100px" src="{{c.upload}}"/>
+    </div>
+      <div class="commentaire-date">
+        <i>{{c.datetime}}</i>
+      </div>
+    </div>
+    {% endif %}
+
+{% endfor %}
+
+  
+    <!-- end liste de commentaire  -->
+   
+
+    <!-- ajouter un commentaire  -->
+    <form method="post" action="index.php?action=AddComment" 
+    enctype="multipart/form-data" >
+      <input type="hidden" name="ticket_id" value="{{r.id}}"/>
+    <div class="ticket-detail-add-comment">
+      <h2 style="font-weight: normal">Ajouter un commentaire :</h2>
+      {% if user.role=="contact_client" %}
+      <select hidden
+      
+      
+      aria-placeholder="choisir un ticket"
+      class=""
+      name="type"
+      id="type"
+    >
+      <option value="privee">priveé</option>
+
+      <option value="public" selected>public</option>
+    </select>
+    {% elseif user.role!="contact_client" %}
+    <select 
+      aria-placeholder="choisir un ticket"
+      class=""
+      name="type"
+      id="type"
+    >
+      <option value="privee">priveé</option>
+
+      <option value="public" selected>public</option>
+    </select>
+      {%endif%}
+
+    
+      
+    </div>
+  
+    <div class="add-ticket-comment">
+      <input type="text" name="description" required />
+      <label class="filebutton">
+        <img
+          class="uplad-comment-logo"
+          src="./images/upload-comment.png"
+          alt=""
+        />
+        <span><input type="file" id="myfile" name="myfile" /></span>
+      </label>
+    </div>
+    <div class="add-comment-btn">
+      <button type="submit" name="submit">Ajouter</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

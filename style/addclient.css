@@ -1,0 +1,211 @@
+.add-client {
+  /* background-color: blue; */
+  width: 98%;
+  padding: 20px 35px;
+}
+.a-client {
+  color: #000;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+.add-client-path i {
+  color: #737373;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.star-obligation {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.star-obligation img {
+  width: 20px;
+}
+.star-obligation p {
+  color: rgba(0, 0, 0, 0.53);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 0;
+}
+
+.add-client-form {
+  width: max-content;
+}
+.add-client-content {
+  margin-top: 40px;
+}
+.addclient-input-title {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+.addclient-input-title h4 {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 400px;
+}
+.gap-input-star {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 430px;
+  /* background-color: red; */
+  gap: 20px;
+}
+.addclient-input-title .gap-input-star img {
+  width: 20px;
+}
+.addclient-input-title input {
+  padding-left: 10px;
+  width: 400px;
+  height: 43px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.26);
+  background: rgba(255, 255, 255, 0.6);
+}
+.addclient-input-title input:focus {
+  outline: none;
+}
+
+/* role input  */
+.role-input {
+  padding-left: 10px;
+  position: relative;
+  width: 200px;
+  height: 43px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.26);
+  background: rgba(255, 255, 255, 0.6);
+}
+.role-input:focus {
+  outline: none;
+}
+
+/* add client button  */
+.add-client-button {
+  margin-top: 20px;
+
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  width: 100%;
+}
+.add-client-button .save-btn {
+  width: 125px;
+  height: 47px;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 10px;
+  background: #0f6fc5;
+  color: white;
+  border: none;
+}
+.add-client-button .cancel-btn {
+  width: 125px;
+  height: 47px;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 10px;
+  background: #d9d9d9;
+  color: black;
+  border: none;
+}
+
+/* import logo to client */
+.addclient-addlogo {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+.addclient-addlogo h4 {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 400px;
+}
+
+.addclient-addlogo .gap-input-star img {
+  width: 20px;
+}
+.logo-choosefile {
+  display: block;
+}
+.logo-choosefile p {
+  color: rgba(0, 0, 0, 0.61);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-top: 5px;
+}
+
+/* input style  */
+/* Hide the default file input */
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+/* Style the label to resemble a button */
+.custom-file-upload:hover {
+  background-color: #e0e0e0;
+}
+
+/* description input  */
+.addclient-input-description {
+  align-items: center;
+  gap: 90px;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+.addclient-input-description h4 {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 400px;
+}
+.addclient-input-description p {
+  color: rgba(0, 0, 0, 0.61);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 5px 0;
+}
+.addclient-input-description input {
+  width: 99%;
+  height: 247px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.213);
+  background: rgba(255, 255, 255, 0.6);
+}

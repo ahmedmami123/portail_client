@@ -1,0 +1,72 @@
+{% extends "template.html" %}
+
+{% block liste_utilisateur %}
+<link rel="stylesheet" href="./style/listeclient.css" />
+<div class="client-list-container">
+  <div class="client-liste-and-search">
+    <div class="client-list">
+      <h2>Liste des utilisateurs</h2>
+      <i>Tableau de bord</i>
+      <i>/</i>
+      <i>Liste des utilisateurs</i>
+    </div>
+    <div class="lc-searchbar-container">
+      <input type="text" id="searchInput-user" placeholder="Rechercher" />
+      <img style="position:absolute;left:10px; width: 15px;" src="./images/search.svg" alt="" />
+    </div>
+  </div>
+
+  <div class="client-list-path">
+    <div>
+      <table>
+        <tr>
+          <th>userName</th>
+          <th>firstName</th>
+          <th>lastName</th>
+          <th>email</th>
+          <th>langue</th>
+          <th>role</th>
+          <th>nom de client</th>
+          <th>action</th>
+        </tr>
+
+        <tbody id="filteredResults-user">
+          {% for r1 in result1 %}
+            <tr>
+              <td>{{ r1.user_name }}</td>
+              <td>{{ r1.first_name }}</td>
+              <td>{{ r1.last_name }}</td>
+              <td>{{ r1.email }}</td>
+              <td>{{ r1.langue }}</td>
+              <td>{{ r1.role }}</td>
+              {% set displayed = false %}
+              {% for r in result %}
+                {% if r1.client_id == r.id and not displayed %}
+                  <td>{{ r.client_name }}</td>
+                  {% set displayed = true %}
+                {% endif %}
+              {% endfor %}
+              {% for r in result %}
+                {% if r1.client_id != r.id and not displayed %}
+                  <td></td>
+                  {% set displayed = true %}
+                {% endif %}
+              {% endfor %}
+              <td class="supprimer-utilisateur">
+                <a
+                  onclick="return confirm('Are you sure you want to delete this record?');"
+                  href="index.php?action=DeleteUser&id={{ r1.id }}"
+                  >Supprimer</a
+                >
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
